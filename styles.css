@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+root{
+    --red: #ff0000;
+}
+body{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 120px auto 0 auto;
+    max-width: 500px;
+
+}
+.stats-container{
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ff8c00;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+.details{
+    width: 100%;
+}
+#progressBar{
+    width: 100%;
+    height: 10px;
+    background-color: #464343;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#progress{
+    width: 50%;
+    height: 10px;
+    background-color: #ff8c00;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+#numbers{
+    width: 100px;
+    height: 100px;
+    background-color: #ff8c00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+}
+form{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+input{
+    flex: 1;
+    padding: 16px;
+    background:  #1d1c1c;
+    border: 1px solid #ff8c00;
+    border-radius: 10px;
+    outline: none;
+    color: aliceblue;
+}
+button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff8c00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: bold;
+    outline: none;
+}
+.taskItem{
+    display: flex;
+    background-color: #333131;
+    padding: 10px;
+   
+    width: 100%;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+#task-list{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none; 
+}
+.taskItem img{
+    width: 24px;
+    height: 24px;
+}
+.task{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.task input{
+    width: 20px;
+    height: 20px;
+}
+.taskItem img{
+    width: 24px;
+    height: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.completed p{
+    text-decoration: line-through;
+    color: rgb(142, 97, 14);
+}
+/* Smooth task list animation */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .theme-toggle input {
+    display: none;
+  }
+  .theme-toggle .slider {
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .theme-toggle .slider::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: 0.4s;
+  }
+  .theme-toggle input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+  body.light-mode {
+    background-color: #f4f4f4;
+    color: #111;
+  }
+  body.light-mode .taskItem {
+    background-color: #fff;
+  }
+  body.light-mode input {
+    background-color: #fff;
+    color: #111;
+  }
+  body.light-mode button {
+    color: #fff;
+  }
+  body.light-mode #progressBar {
+    background-color: #ddd;
+  }
+  body.light-mode #progress {
+    background-color: #ff8c00;
+  }
+  
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1000;
+  }
+  #toast.show {
+    opacity: 1;
+  }
+  .bin-icon {
+    filter: hue-rotate(30deg) saturate(100%) brightness(1.5);
+  }
+  
